@@ -23,7 +23,7 @@ class AuthController extends Controller
             if($registerModel->validate() && $registerModel->register()){
                 return "Success";
             }
-            dd($registerModel->errors);
+//            dd($registerModel->errors);
             return $this->render('register', [
                 "model" => $registerModel
             ]);
