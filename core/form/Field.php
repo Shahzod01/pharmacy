@@ -40,7 +40,7 @@ class Field
         );
     }
 
-    public function passwordField()
+    public function passwordField(): Field
     {
         $this->type = self::TYPE_PASSWORD;
         return $this;

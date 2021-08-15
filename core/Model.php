@@ -23,7 +23,7 @@ abstract class Model
 
     abstract public function rules(): array;
 
-    public function validate()
+    public function validate(): bool
     {
         foreach ($this->rules() as $attribute => $rules){
             $value = $this->{$attribute};
@@ -61,11 +61,11 @@ abstract class Model
         $this->errors[$attribute][] = $message;
     }
 
-    public function errorMessage()
+    public function errorMessage(): array
     {
         return [
             self::RULE_REQUIRED => 'This field is required',
-            self::RULE_EMAIL => 'This fiels must be valid email',
+            self::RULE_EMAIL => 'This field must be valid email',
             self::RULE_MAX => 'Max length of this field must be {max}',
             self::RULE_MIN => 'Min length of this field must be {min}',
             self::RULE_MATCH => 'This field must be same as {match}'
