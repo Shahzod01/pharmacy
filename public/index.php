@@ -16,7 +16,7 @@ $config = [
         'password' => $_ENV['DB_PASSWORD'],
     ]
 ];
-dd(phpinfo());
+//dd(phpinfo());
 
 $app = new Application(dirname(__DIR__), $config);
 
