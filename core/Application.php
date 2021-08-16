@@ -7,6 +7,7 @@ class Application
     public Router $router;
     public Request $request;
     public Response $response;
+    public Session $session;
     public DataBase $db;
     public static string $ROOT_DIR;
     public static Application $app;
@@ -16,6 +17,7 @@ class Application
     {
         $this->request = new Request();
         $this->response = new Response();
+        $this->session = new Session();
         self::$ROOT_DIR = $rootPath;
         self::$app = $this;
         $this->router = new Router($this->response);
