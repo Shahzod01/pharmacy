@@ -22,6 +22,11 @@ class User extends DBModel
         return 'users';
     }
 
+    public function primaryKey(): string
+    {
+        return 'id';
+    }
+
     public function save(): bool
     {
         $this->status = self::STATUS_INACTIVE;
@@ -47,5 +52,16 @@ class User extends DBModel
     public function attributes(): array
     {
         return ['firstname', 'lastname', 'email', 'password', 'status'];
+    }
+
+    public function labels(): array
+    {
+        return [
+            'firstname' => "First name",
+            'lastname' => "Last name",
+            'email' => "E-mail address",
+            'password' => "Password",
+            'confirmPassword' => "Confirm password",
+        ];
     }
 }

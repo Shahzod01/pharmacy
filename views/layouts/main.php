@@ -1,4 +1,6 @@
-<?php use App\Core\Application; ?>
+<?php use App\Core\Application;
+dump(Application::$app->user);
+?>
 
 <!doctype html>
 <html lang="ru">
