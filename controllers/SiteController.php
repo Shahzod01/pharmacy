@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\Application;
 use App\Core\Controller;
+use App\Core\Request;
 
 /**
  * Class SiteController
@@ -24,6 +25,7 @@ class SiteController extends Controller
     {
         return $this->render('contacts');
     }
+
     public function handleContact(Request $request)
     {
         $body = Application::$app->request->getBody();

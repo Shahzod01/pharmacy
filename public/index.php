@@ -9,6 +9,32 @@ require_once '../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
 $dotenv->load();
 
+
+class Train implements \App\Car
+{
+    public function drive()
+    {
+        return "tututu";
+    }
+}
+
+class Moto implements \App\Car
+{
+    public function drive()
+    {
+        
+    }
+}
+class Game
+{
+    public function run()
+    {
+        
+    }
+}
+
+$train = new Train();
+$train->drive();
 $config = [
     'userClass' => \App\Models\User::class,
     'db' => [
@@ -23,8 +49,9 @@ $app = new Application(dirname(__DIR__), $config);
 
 $app->router->get('/', [SiteController::class, 'home']);
 $app->router->get('/contacts', [SiteController::class, 'contacts']);
-$app->router->get('/about', 'about');
-$app->router->post('/contacts', [SiteController::class, 'handleContact']);
+$app->router->get('/about', function(){
+    return 'about';
+});
 
 $app->router->get('/login', [AuthController::class, 'login']);
 $app->router->post('/login', [AuthController::class, 'login']);

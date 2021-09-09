@@ -20,17 +20,18 @@ class Request
         return strtolower($_SERVER['REQUEST_METHOD']);
     }
 
-    public function isGet()
+    public function isGet(): bool
     {
         return $this->method() === 'get';
     }
 
-    public function isPost()
+    public function isPost(): bool
     {
         return $this->method() === 'post';
     }
-    public function getBody()
+    public function getBody(): array
     {
+
         $body = [];
         if($this->method() === 'get'){
             foreach($_GET as $key => $vale){
